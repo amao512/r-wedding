@@ -1,0 +1,23 @@
+.desc {
+    max-width: 100%;
+    textarea {
+        width: 100%;
+        border: none;
+        padding: 6px 0 0 0;
+        margin: 5px 0;
+        border: none;
+        color: #222;
+        font-family: var(--linksFontFamily);
+        font-size: 16px;
+        border-bottom: 2px solid #d3d3d3;
+        width: 100%;
+        outline: none;
+        transition: all .3s ease;
+        &:focus {
+            border-color: var(--inputBorderColor);
+        }
+    }
+    .error {
+        border-bottom: 2px solid red;
+    }
+}

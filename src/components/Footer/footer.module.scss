@@ -1,0 +1,35 @@
+.footerContainer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    .footer {
+        text-align: center;
+        .links {
+            ul {
+                padding: 20px 5px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+                li {
+                    list-style: none;
+                    a {
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: var(--linksColor);
+                        font-family: var(--linksFontFamily);
+                        font-size: 12px;
+                        font-weight: var(--linksFontWeight);
+                        transition: all .3s ease;
+                        &:hover {
+                            color: var(--linksColorHover);
+                        }
+                    }
+                }
+            }
+        }
+        .copyright {
+            font-size: 14px;
+            font-family: var(--linksFontFamily);
+            color: #777;
+
+        }
+    }
+}

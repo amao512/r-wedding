@@ -1,0 +1,232 @@
+// start of selectRestaurants styles
+.selectRestaurants {
+    z-index: 1;
+    .input {
+        position: relative;
+        .arrows,
+        .rotateArrows {
+            position: absolute;
+            top: 5px;
+            right: 0;
+            cursor: pointer;
+            span {
+                transition: all .3s ease;
+                font-size: 30px;
+            }
+        }
+        .rotateArrows {
+            span {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .restaurants {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        border: 2px solid #d3d3d3;
+        position: relative;
+        height: 300px;
+        .btnBack,
+        .btnNext {
+            z-index: 2;
+            .btn {
+                border: none;
+                outline: none;
+                background: none;
+                i {
+                    font-size: 36px;
+                    color: #fff;
+                }
+            }
+        }
+        .btnNext {
+            justify-self: end;
+            padding-right: 20px;
+        }
+        .btnBack {
+            padding-left: 20px;
+        }
+        .slider {
+            z-index: 1;
+            height: 300px;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            .slide {
+                width: 100%;
+                background-position: center;
+                background-size: cover;
+                text-align: center;
+                padding: 27px 0;
+                background-repeat: no-repeat;
+                position: relative;
+                z-index: -2;
+                .titleBtn {
+                    padding: 50px 0;
+                    h1 {
+                        z-index: 1;
+                        color: #fff;
+                        font-size: 36px;
+                        font-family: var(--titleFamily);
+                    }
+                    .buttons {
+                        z-index: 1;
+                        display: grid;
+                        grid-gap: 15px;
+                        max-width: 200px;
+                        margin: 0 auto;
+                        padding: 15px 0;
+                        button {
+                            padding: 6px 12px;
+                            cursor: pointer;
+                            transition: all .3s ease;
+                            background: none;
+                            font-family: var(--linksFontFamily);
+                            font-weight: bold;
+                            font-size: 18px;
+                            &:hover {
+                                color: #fff;
+                            }
+                        }
+                        .more {
+                            color: var(--inputBorderColor);
+                            border: 3px solid var(--inputBorderColor);
+                            &:hover {
+                                background-color: var(--inputBorderColor);
+                            }
+                        }
+                        .select {
+                            color: rgb(95, 143, 40);
+                            border: 3px solid rgb(95, 143, 40);
+                            &:hover {
+                                background-color: rgb(95, 143, 40);
+                            }
+                        }
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background-color: #222;
+                        opacity: 0.7;
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 530px){
+    .selectRestaurants {
+        .restaurants {
+            height: 250px;
+            .btnBack,
+            .btnNext {
+                padding: 10px;
+                .btn {
+                    i {
+                        font-size: 30px;
+                    }
+                }
+            }
+            .slider {
+                height: 250px;
+                .slide {
+                    .titleBtn {
+                        padding: 30px 0;
+                        h1 {
+                            margin: 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 470px){
+    .selectRestaurants {
+        .restaurants {
+            height: 200px;
+            .slider {
+                height: 200px;
+                .slide {
+                    .titleBtn {
+                        .buttons {
+                            grid-gap: 5px;
+                            padding: 0;
+                            max-width: 150px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px){
+    .selectRestaurants {
+        .restaurants {
+            height: 150px;
+            .btnBack,
+            .btnNext {
+                padding: 5px;
+                .btn {
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .slider {
+                height: 150px;
+                .slide {
+                    .titleBtn {
+                        h1 {
+                            margin: 10px 0;
+                            font-size: 24px;
+                        }
+                        .buttons{
+                            grid-template-columns: 1fr 1fr;
+                            max-width: 180px;
+                            padding: 10px;
+                            button {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 370px){
+    .selectRestaurants {
+        .restaurants {
+            .slider {
+                .slide {
+                    .titleBtn {
+                        padding: 20px;
+                        h1 {
+                            padding-top: 10px;
+                            padding-bottom: 0;
+                        }
+                        .buttons {
+                            padding: 5px;
+                            max-width: 230px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// end of selectRestaurants styles

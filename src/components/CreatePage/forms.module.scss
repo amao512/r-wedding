@@ -1,0 +1,24 @@
+.formsSection {
+    margin: 0;
+    margin-bottom: 20px;
+    .forms {
+        border: 2px solid #d3d3d3;
+        padding: 20px;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width: 990px){
+    .formsSection {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (min-width: 720px){
+    .formsSection {
+        .forms {
+            width: 600px;
+            margin: 0 auto;
+        }
+    }
+}

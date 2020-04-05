@@ -1,0 +1,84 @@
+.banner {
+    padding: 20px;
+    position: relative;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
+    .title {
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        z-index: 1;
+        text-align: center;
+        p, h1 {
+            margin: 0;
+        }
+        p {
+            color: #fff;
+            font-family: var(--linksFontFamily);
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+        h1 {
+            color: var(--linksColorHover);
+            font-family: var(--mainFamily);
+            font-size: 46px;
+            text-transform: capitalize;
+        }
+        &::before {
+            content: url('../../../../assets/images/banner/shap-1.png');
+        }
+        &::after {
+            content: url('../../../../assets/images/banner/shap-2.png');
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background-color: #222;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.5;
+        z-index: -2;
+    }
+}
+
+@media screen and (max-width: 990px){
+    .banner {
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 540px){
+    .banner {
+        border-radius: 0;
+        .title {
+            &::after, &::before {
+                display: none;
+            }
+            h1 {
+                font-size: 36px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px){
+    .banner {
+        .title {
+            p {
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 34px;
+            }
+        }
+    }
+}

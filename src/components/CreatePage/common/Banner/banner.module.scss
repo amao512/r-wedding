@@ -1,0 +1,45 @@
+// start of banner styles
+.banner {
+    .title {
+        margin: 10px 0 18px;
+    }
+    .single {
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        padding: 10px;
+        h3 {
+            color: #fff;
+            z-index: 2;
+            font-family: var(--linksFontFamily);
+            margin: 18px 0;
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0.5;
+            transition: all .3s ease;
+            background-color: #222;
+        }
+        span {
+            position: absolute;
+            right: 10px;
+            top: 7px;
+            font-size: 44px;
+            color: #fff;
+        }
+    }
+}
+// end of banner styles

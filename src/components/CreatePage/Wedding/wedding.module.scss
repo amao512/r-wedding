@@ -1,0 +1,29 @@
+.wedding {
+    padding: 20px 0;
+    .forms {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-column-gap: 15px;
+        align-items: center;
+        // margin-bottom: 15px;
+        div {
+            h3 {
+                margin: 5px 0;
+                font-size: 14px;
+                color: #988;
+                font-weight: 400;
+            }
+        }
+    }
+    .restForms {
+        div {
+            margin-bottom: 15px;
+            h3 {
+                // margin: 5px 0;
+                font-size: 14px;
+                color: #988;
+                font-weight: 400;
+            }
+        }
+    } 
+}

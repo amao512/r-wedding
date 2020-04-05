@@ -1,0 +1,10 @@
+.headerSection {
+    background-color: #fff;
+    padding: 0 15px;
+    .header {
+        padding: 10px 0;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        z-index: 2;
+    }
+}

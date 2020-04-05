@@ -1,0 +1,72 @@
+.info {
+    padding: 30px 20px;
+    margin: 10px 0;
+    color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    // z-index: -1;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #222;
+        opacity: 0.3;
+        z-index: -2;
+    }
+    h1 {
+        font-family: var(--mainFamily);
+        padding: 10px 0 20px;
+    }
+    .boxes {
+        max-width: 700px;
+        margin: 0 auto;
+        z-index: 1;
+        .inviteBox, .infoBox {
+            margin: 10px 0;
+            padding: 20px;
+            border: 2px solid #d3d3d3;
+            border-radius: 4px;
+            h2 {
+                border-bottom: 2px solid #d3d3d3;
+                padding: 0 0 15px;
+                font-weight: 400;
+                font-size: 20px;
+            }
+        }
+        .infoBox {
+            .data {
+                margin-top: 20px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 10px;
+                p {
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px){
+    .info {
+        border-radius: 0;
+    }
+}
+
+@media screen and (min-width: 720px){
+    .info {
+        .boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 15px;
+        }
+    }
+}

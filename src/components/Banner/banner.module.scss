@@ -1,0 +1,44 @@
+.banner {
+    background-position: center;
+    height: 400px;
+    display: grid;
+    align-items: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    p {
+        color: #fff;
+        text-align: center;
+        font-family: Playfair Display, sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0;
+        padding: 20px 15px;
+        border: 3px solid #fff;
+        width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 990px){
+    .banner {
+        height: 800px;
+    }
+}
+
+@media screen and (max-width: 990px){
+    .banner {
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 620px){
+    .banner p {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 420px){
+    .banner p {
+        font-size: 24px;
+        width: 200px;
+    }
+}

@@ -1,0 +1,29 @@
+.links {
+    justify-self: end;
+    ul {
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline;
+            padding: 0 10px;
+            a {
+                text-decoration: none;
+                color: var(--linksColor);
+                font-family: var(--linksFontFamily);
+                font-weight: var(--linksFontWeight);
+                font-size: var(--linksFontSize);
+                transition: all .2s ease;
+                &:hover {
+                    color: var(--linksColorHover);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px){
+    .links {
+        display: none;
+    }
+}

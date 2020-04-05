@@ -1,0 +1,77 @@
+// start of selectCity styles
+.selectCity {
+    position: relative;
+    .focusedInput,
+    .input {
+        position: relative;
+        .placeholder {
+            position: absolute;
+            color: #988;
+            transition: all .2s ease;
+            z-index: -1;
+        }
+        .arrows,
+        .rotateArrows {
+            position: absolute;
+            top: 5px;
+            right: 0;
+            cursor: pointer;
+            span {
+                transition: all .3s ease;
+                font-size: 30px;
+            }
+        }
+        .rotateArrows {
+            span {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .input {
+        .placeholder {
+            transform: translateY(10px);
+        }
+    }
+    .focusedInput {
+        .placeholder {
+            transform: translateY(-10px);
+            font-size: 14px;
+            color: var(--inputBorderColor);
+        }
+    }
+    .section,
+    .hideSection {
+        width: 99.9%;
+        position: absolute;
+        top: 35px;
+        border: 2px solid var(--inputBorderColor);
+        border-top: none;
+        background-color: #fff;
+        z-index: 2;
+        .option {
+            margin: 0;
+            padding: 6px 0 6px 12px;
+            cursor: pointer;
+            transition: all .2s ease;
+            &:hover {
+                background-color: var(--inputBorderColor);
+                color: #fff;
+            }
+        }
+    }
+    .hideSection {
+        display: none;
+    }
+    .section {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 720px){
+    .selectCity {
+        .section, .hideSection {
+            width: 99.5%;
+        }
+    }
+}
+// end of selectCity styles
