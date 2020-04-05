@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ProvePage from './ProvePage';
+import { FHF } from '../StyledComponents/404';
 
 const ProvePageContainer = props => {
 
@@ -15,11 +16,10 @@ const ProvePageContainer = props => {
         restaurant === undefined
     ){
         return (
-            <div style={
-                {'textAlign': 'center', 'margin': '30px 50px 50px', 'border': '3px solid red', 'padding': '10px 20px'}
-            }>
-                <h2 style={{'color': 'red'}}>Warning! At first fill the forms</h2>
-            </div>
+            <FHF>
+                <h1>404</h1>
+                <h2>You did not create a plan!</h2>
+            </FHF>
         )
     }
 
@@ -27,7 +27,8 @@ const ProvePageContainer = props => {
 }
 
 const mstp = state => ({
-    wedding: state.wedding.data
+    wedding: state.wedding.data,
+    plans: state.plans.data
 })
 
 ProvePage.propTypes = {

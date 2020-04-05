@@ -1,27 +1,17 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import PlanPage from '../components/PlanPage/PlanPage';
-import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import PlanPage from '../components/PlanPage/PlanPageContainer';
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
+import { compose } from 'redux';
 
-const SinglePlan = ({ plans }) => {
+const SinglePlan = ({ match }) => {
     return (
         <>
             <ScrollToTop>
-                <Switch>
-                    {plans.map((plan, index) => (
-                        <Route key={index} path={`/plan/${plan.id}`} 
-                                component={() => <PlanPage data={plan} />} 
-                        />
-                    ))}
-                </Switch>
+                <PlanPage slug={match.params.plan} />
             </ScrollToTop>
         </>
     )
 }
 
-const mstp = state => ({
-    plans: state.plans.data
-})
-
-export default connect(mstp)(SinglePlan);
+export default compose(withRouter)(SinglePlan);

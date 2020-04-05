@@ -2,13 +2,15 @@ import React from 'react';
 import img from '../../assets/images/organizations/Image-05.jpg'
 import Prove from './common/Prove';
 
-const ProvePage = ({ wedding }) => {
+const ProvePage = ({ wedding, plans }) => {
 
-    const {names, date, city, capacity, restaurant} = wedding;
+    const {names, date, city, capacity, restaurant, category} = wedding;
 
     return (
         <>
-            <Prove img={img} data={wedding} category='Wedding'>
+            <Prove img={img} data={wedding} 
+                    category={category} plans={plans} 
+            >
                 <>
                     <div>
                         <h3>Groom:</h3>

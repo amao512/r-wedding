@@ -6,7 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 const Prove = () => {
     return (
         <>
-            <Title>Prove</Title>
+            <Title>Confirmation</Title>
             <Switch>
                 <Route path='/prove/prove-wedding' component={() => <ProvePage />} />
             </Switch>

@@ -1,0 +1,18 @@
+.restaurant {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 10px;
+    h1 {
+        text-align: center;
+        padding: 20px 10px;
+        font-family: var(--mainFamily);
+    }
+    .images {
+        margin: 20px 0 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        img {
+            width: 100%;
+        }
+    }
+}

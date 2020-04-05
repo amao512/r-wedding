@@ -2,6 +2,7 @@ import React from 'react';
 import s from './home.module.scss';
 import Title from '../StyledComponents/Title';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const Restaurants = ({ restaurants }) => {
     return (
@@ -12,7 +13,9 @@ const Restaurants = ({ restaurants }) => {
                 {restaurants.map((item, index) => (
                     <div key={index} className={s.single} 
                     style={{'backgroundImage': `url(${item.img})`}}>
-                        <p>{item.title}</p>
+                        <NavLink to={`restaurants/${item.slug}`}>
+                            <p>{item.title}</p>
+                        </NavLink>
                     </div>
                 ))}
             </div>

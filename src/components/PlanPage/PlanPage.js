@@ -5,21 +5,20 @@ import Couple from './common/Couple/Couple';
 import Info from './common/Info/Info';
 import Restaurant from './common/Restaurant/Restaurant';
 
-const PlanPage = ({ data }) => {
+const PlanPage = props => {
 
-    const {
-        names: {groom, bride}, 
-        category, date, city, 
-        capacity, restaurant,
-        invite, desc
-    } = data;
+    const { 
+        category, names: { groom, bride }, 
+        date, city, capacity, invite,
+         desc, restaurant 
+    } = props;
 
     return (
         <div>
             <div className='container'>
-                <Banner img={img} category={data.category} 
+                <Banner img={img} category={category} 
                         names={`${groom.name} & ${bride.name}`} 
-                        date={data.date}
+                        date={date}
                 />
 
                 <Couple groom={groom} bride={bride}/>

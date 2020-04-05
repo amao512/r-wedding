@@ -7,10 +7,30 @@ const FILTER_RESTAURANTS = 'FILTER_RESTAURANTS';
 
 const initialState = {
     data: [
-        {title: 'Baq Saraiy', img: img1, city: 'Nur-Sultan', price: null, capacity: 500},
-        {title: 'Grand Royal', img: img2, city: 'Taraz', price: null, capacity: 400},
-        {title: 'Satty', img: img3, city: 'Nur-Sultan', price: null, capacity: 600},
-        {title: 'Versal', img: img4, city: 'Taraz', price: null, capacity: 300},
+        {
+            title: 'Baq Saraiy', img: img1, 
+            city: 'Nur-Sultan', price: null, 
+            capacity: 500, slug: 'baq-saraiy',
+            exist: true
+        },
+        {
+            title: 'Grand Royal', img: img2, 
+            city: 'Taraz', price: null, 
+            capacity: 400, slug: 'grand-royal',
+            exist: true
+        },
+        {
+            title: 'Satty', img: img3, 
+            city: 'Nur-Sultan', price: null, 
+            capacity: 600, slug: 'satty',
+            exist: true
+        },
+        {
+            title: 'Versal', img: img4, 
+            city: 'Taraz', price: null, 
+            capacity: 300, slug: 'versal',
+            exist: true
+        },
     ],
     filteredRestaurants: []
 }

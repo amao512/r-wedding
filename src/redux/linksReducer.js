@@ -3,8 +3,8 @@ const initialState = {
     data: [
         {name: 'Home', path: '/home'},
         {name: 'About', path: '/about'},
-        {name: 'Blog', path: '/blog'},
-        {name: 'Contact', path: '/contact'}
+        {name: 'My plans', path: '/my-plans'},
+        {name: 'Create', path: '/create'}
     ]
 }
 

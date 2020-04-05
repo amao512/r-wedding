@@ -3,9 +3,15 @@ import s from './prove.module.scss';
 import { NavLink } from 'react-router-dom';
 import FormButton from '../../StyledComponents/FormButton';
 import { connect } from 'react-redux';
-import { addPlan } from '../../../redux/plansReducer'
+import { setPlan, getPlans } from '../../../redux/plansReducer'
 
-const Prove = ({ addPlan, children, img, data, category }) => {
+const Prove = ({ children, img, data, category, setPlan, plans, getPlans }) => {
+
+    const confirm = () => {
+        setPlan([data, ...plans]);
+        getPlans();
+    }
+
     return (
         <div className={s.proveForm}>
             <div className='container'>
@@ -25,7 +31,7 @@ const Prove = ({ addPlan, children, img, data, category }) => {
                             <FormButton background={'#44a6c6'}>Create another</FormButton>
                         </NavLink>
                         <NavLink to={`/plan/${data.id}`}>
-                            <FormButton onClick={() => addPlan(data)}>Prove</FormButton>
+                            <FormButton onClick={confirm}>Confirm</FormButton>
                         </NavLink>
                     </div>
                 </div>
@@ -35,4 +41,4 @@ const Prove = ({ addPlan, children, img, data, category }) => {
     )
 }
 
-export default connect(null, { addPlan })(Prove);
+export default connect(null, { setPlan, getPlans })(Prove);
