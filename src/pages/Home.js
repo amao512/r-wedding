@@ -1,22 +1,32 @@
 import React from 'react';
 import Banner from '../components/Banner/Banner';
 import banner from '../assets/images/banner/home-banner.jpg';
-import Restaurants from '../components/HomePage/Restaurants';
+import RestaurantsList from '../components/RestaurantsList/RestaurantsList';
 import Event from '../components/HomePage/Event';
 import StartForm from '../components/HomePage/CreatePlanForm';
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
+import { connect } from 'react-redux';
+import { getLastRestaurants } from '../selectors/selectors';
+import Title from '../components/StyledComponents/Title';
 
-const Home = () => {
+const Home = ({ restaurants }) => {
     return (
         <>
             <ScrollToTop>
                 <Banner img={banner} title='Honey wedding' />
                 <Event />
-                <Restaurants />
+
+                <Title>Restaurants</Title>
+                <RestaurantsList restaurants={restaurants} />
+                
                 <StartForm/>
             </ScrollToTop>
         </>
     )
 }
 
-export default Home;
+const mstp = state => ({
+    restaurants: getLastRestaurants(state.restaurants.data)
+})
+
+export default connect(mstp)(Home);

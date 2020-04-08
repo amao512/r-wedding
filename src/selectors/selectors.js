@@ -3,6 +3,6 @@ export const getSelectedCategory = data => {
                 .map(item => item.title).join('')
 }
 
-export const getLastPlan = data => {
-    return data[0];
+export const getLastRestaurants = data => {
+    return [data[0], data[1], data[2], data[3]];
 }

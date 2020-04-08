@@ -9,6 +9,8 @@
     }
     .images {
         margin: 20px 0 50px;
+        border-radius: 10px;
+        overflow: hidden;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         img {

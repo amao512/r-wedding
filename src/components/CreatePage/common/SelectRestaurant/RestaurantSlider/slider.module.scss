@@ -27,6 +27,18 @@
     .btnBack {
         padding-left: 20px;
     }
+    .noRestaurants {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 27px 0;
+        h1 {
+            text-align: center;
+        }
+    }
     .slider {
         z-index: 1;
         height: 300px;
@@ -117,6 +129,11 @@
 @media screen and (max-width: 530px){
     .restaurants {
         height: 250px;
+        .noRestaurants {
+            h1 {
+                font-size: 20px;
+            }
+        }
         .btnBack,
         .btnNext {
             padding: 10px;

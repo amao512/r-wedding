@@ -18,31 +18,36 @@ const RestaurantSlider = ({ show, restaurants, setRestaurant, setTitle }) => {
                                 <i className="material-icons">arrow_back_ios</i>
                             </ButtonBack>
                         </div>
-                        
-                        <Slider className={s.slider}>
-                            {restaurants.map((item, index) => (
-                                <Slide key={index} index={index} 
-                                        className={s.slide} 
-                                        style={{'backgroundImage': `url(${item.img})`}}
-                                >
-                                    <div className={s.titleBtn}>
-                                        <h1>{item.title}</h1>
+                        {restaurants.length <= 0 
+                            ? <div className={s.noRestaurants}>
+                                <h1>There is no restaurants</h1>
+                            </div>
+                            :   <Slider className={s.slider}>
+                                    {restaurants.map((item, index) => (
+                                        <Slide key={index} index={index} 
+                                                className={s.slide} 
+                                                style={{'backgroundImage': `url(${item.img})`}}
+                                        >
+                                            <div className={s.titleBtn}>
+                                                <h1>{item.title}</h1>
 
-                                        <div className={s.buttons}>
-                                            <NavLink to={`/restaurants/${item.slug}`} className={s.more}>
-                                                <button>More</button>
-                                            </NavLink>
-                                            <button className={s.select} 
-                                                    onClick={() => {
-                                                        setRestaurant(item);
-                                                        setTitle(item.title);
-                                                    }}
-                                            >Select</button>
-                                        </div>
-                                    </div>
-                                </Slide>
-                        ))}
-                        </Slider>
+                                                <div className={s.buttons}>
+                                                    <NavLink to={`/restaurants/${item.slug}`} className={s.more}>
+                                                        <button>More</button>
+                                                    </NavLink>
+                                                    <button className={s.select} 
+                                                            onClick={() => {
+                                                                setRestaurant(item);
+                                                                setTitle(item.title);
+                                                            }}
+                                                    >Select</button>
+                                                </div>
+                                            </div>
+                                        </Slide>
+                                    ))}
+                                </Slider>
+                        }
+                        
 
                         <div className={s.btnNext}>
                             <ButtonNext className={s.btn}>

@@ -4,7 +4,8 @@ const initialState = {
         {name: 'Home', path: '/home'},
         {name: 'About', path: '/about'},
         {name: 'My plans', path: '/my-plans'},
-        {name: 'Create', path: '/create'}
+        {name: 'Create', path: '/create'},
+        {name: 'Restaurants', path: '/restaurants'},
     ]
 }
 
