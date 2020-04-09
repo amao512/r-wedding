@@ -8,6 +8,7 @@ import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 import { connect } from 'react-redux';
 import { getLastRestaurants } from '../selectors/selectors';
 import Title from '../components/StyledComponents/Title';
+import PropTypes from 'prop-types';
 
 const Home = ({ restaurants }) => {
     return (
@@ -28,5 +29,9 @@ const Home = ({ restaurants }) => {
 const mstp = state => ({
     restaurants: getLastRestaurants(state.restaurants.data)
 })
+
+Home.propTypes = {
+    restaurants: PropTypes.array.isRequired
+}
 
 export default connect(mstp)(Home);

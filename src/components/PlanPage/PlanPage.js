@@ -4,6 +4,7 @@ import img from '../../assets/images/banner/banner.jpg';
 import Couple from './common/Couple/Couple';
 import Info from './common/Info/Info';
 import Restaurant from './common/Restaurant/Restaurant';
+import PropTypes from 'prop-types';
 
 const PlanPage = props => {
 
@@ -33,6 +34,17 @@ const PlanPage = props => {
             </div>
         </div>
     )
+}
+
+PlanPage.propTypes = {
+    category: PropTypes.string,
+    names: PropTypes.object.isRequired,
+    date: PropTypes.string,
+    city: PropTypes.string,
+    capacity: PropTypes.string,
+    invite: PropTypes.string,
+    desc: PropTypes.string,
+    restaurant: PropTypes.object.isRequired
 }
 
 export default PlanPage;

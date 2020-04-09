@@ -10,6 +10,7 @@ import FormButton from '../../StyledComponents/FormButton';
 import { NavLink } from 'react-router-dom';
 import Invite from '../common/Invite/Invite';
 import Desc from '../common/Desc/Desc';
+import PropTypes from 'prop-types';
 
 
 const Wedding = props => {
@@ -57,6 +58,22 @@ const Wedding = props => {
 
         </div>
     )
+}
+
+Wedding.propTypes = {
+    setNames: PropTypes.func.isRequired,
+    setDate: PropTypes.func.isRequired,
+    setCapacity: PropTypes.func.isRequired,
+    setCity: PropTypes.func.isRequired,
+    error: PropTypes.bool.isRequired,
+    setError: PropTypes.func.isRequired,
+    restaurantCondition: PropTypes.bool.isRequired,
+    restaurants: PropTypes.array.isRequired,
+    setRestaurant: PropTypes.func.isRequired,
+    nextForm: PropTypes.func.isRequired,
+    collectWeddingData: PropTypes.func.isRequired,
+    setInvite: PropTypes.func.isRequired,
+    setDesc: PropTypes.func.isRequired
 }
 
 export default Wedding;

@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './burger.module.scss';
+import PropTypes from 'prop-types';
 
 const BurgerButton = ({ showLinks, setShowLinks }) => {
 
@@ -14,6 +15,11 @@ const BurgerButton = ({ showLinks, setShowLinks }) => {
 
         </div>
     )
+}
+
+BurgerButton.propTypes = {
+    showLinks: PropTypes.bool.isRequired,
+    setShowLinks: PropTypes.func.isRequired
 }
 
 export default BurgerButton;

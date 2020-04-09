@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './input.module.scss';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Input = ({ type, placeholder, func, error }) => {
 
@@ -34,6 +35,13 @@ const Input = ({ type, placeholder, func, error }) => {
             <input type={type} alt={placeholder} onChange={e => setFunc(e.target.value)} />
         </div>
     )
+}
+
+Input.propTypes = {
+    type: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    func: PropTypes.func.isRequired,
+    error: PropTypes.bool.isRequired
 }
 
 export default Input;

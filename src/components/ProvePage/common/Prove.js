@@ -3,7 +3,8 @@ import s from './prove.module.scss';
 import { NavLink } from 'react-router-dom';
 import FormButton from '../../StyledComponents/FormButton';
 import { connect } from 'react-redux';
-import { setPlan, getPlans } from '../../../redux/plansReducer'
+import { setPlan, getPlans } from '../../../redux/plansReducer';
+import PropTypes from 'prop-types';
 
 const Prove = ({ children, img, data, category, setPlan, plans, getPlans }) => {
 
@@ -39,6 +40,22 @@ const Prove = ({ children, img, data, category, setPlan, plans, getPlans }) => {
             </div>
         </div>
     )
+}
+
+Prove.propTypes = {
+    children: PropTypes.element.isRequired,
+    img: PropTypes.string.isRequired,
+    data: PropTypes.shape({
+        names: PropTypes.object.isRequired,
+        date: PropTypes.string.isRequired,
+        city: PropTypes.string.isRequired,
+        capacity: PropTypes.string.isRequired,
+        restaurant: PropTypes.object
+    }),
+    category: PropTypes.string.isRequired,
+    setPlan: PropTypes.func.isRequired,
+    plans: PropTypes.array.isRequired,
+    getPlans: PropTypes.func.isRequired
 }
 
 export default connect(null, { setPlan, getPlans })(Prove);

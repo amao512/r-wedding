@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import s from './desc.module.scss';
 import Input from '../Input/Input';
+import PropTypes from 'prop-types';
 
 const Desc = ({ setDesc, error }) => {
 
@@ -18,6 +19,11 @@ const Desc = ({ setDesc, error }) => {
             />
         </div>
     )
+}
+
+Desc.propTypes = {
+    setDesc: PropTypes.func.isRequired,
+    error: PropTypes.bool.isRequired
 }
 
 export default Desc;

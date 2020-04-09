@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './restaurants.module.scss';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const RestaurantsList = ({ restaurants }) => {
     return (
@@ -15,6 +16,10 @@ const RestaurantsList = ({ restaurants }) => {
             ))}
         </div>
     )
+}
+
+RestaurantsList.propTypes = {
+    restaurants: PropTypes.array.isRequired
 }
 
 export default RestaurantsList;

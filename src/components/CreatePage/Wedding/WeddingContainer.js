@@ -7,6 +7,7 @@ import {
 } from '../../../redux/weddingReducer';
 import { filterRestaurants } from '../../../redux/restaurantsReducer';
 import Wedding from './Wedding';
+import PropTypes from 'prop-types';
 
 const WeddingContainer = props => {
 
@@ -88,6 +89,20 @@ const mstp = state => ({
     selectedCity: state.wedding.city,
     restaurants: state.restaurants.filteredRestaurants
 })
+
+WeddingContainer.propTypes = {
+    getNames: PropTypes.func.isRequired,
+    getDate: PropTypes.func.isRequired,
+    getCity: PropTypes.func.isRequired,
+    getCapacity: PropTypes.func.isRequired,
+    getRestaurant: PropTypes.func.isRequired,
+    selectedCity: PropTypes.string,
+    restaurants: PropTypes.array.isRequired,
+    filterRestaurants: PropTypes.func.isRequired,
+    collectWeddingData: PropTypes.func.isRequired,
+    getInvite: PropTypes.func.isRequired,
+    getDesc: PropTypes.func.isRequired
+}
 
 export default connect(
     mstp, { 

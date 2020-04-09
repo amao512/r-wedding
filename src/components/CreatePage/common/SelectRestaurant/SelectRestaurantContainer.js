@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SelectRestaurant from './SelectRestaurant';
+import PropTypes from 'prop-types';
 
 const SelectRestaurantContainer = ({ restaurants, setRestaurant }) => {
 
@@ -18,6 +19,11 @@ const SelectRestaurantContainer = ({ restaurants, setRestaurant }) => {
     }
 
     return <SelectRestaurant {...nextProps} />
+}
+
+SelectRestaurantContainer.propTypes = {
+    restaurants: PropTypes.array.isRequired,
+    setRestaurant: PropTypes.func.isRequired
 }
 
 export default SelectRestaurantContainer;

@@ -3,6 +3,7 @@ import s from './restaurants.module.scss';
 import { connect } from 'react-redux';
 import RestaurantsList from '../RestaurantsList/RestaurantsList';
 import Filter from './FIlter/Filter';
+import PropTypes from 'prop-types';
 
 const RestaurantsPage = ({ restaurants, filteredRestaurants }) => {
 
@@ -30,5 +31,10 @@ const mstp = state => ({
     restaurants: state.restaurants.data,
     filteredRestaurants: state.restaurants.filteredRestaurants
 })
+
+RestaurantsPage.propTypes = {
+    restaurants: PropTypes.array.isRequired,
+    filteredRestaurants: PropTypes.array.isRequired
+}
 
 export default connect(mstp)(RestaurantsPage);

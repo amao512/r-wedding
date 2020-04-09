@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import WeddingNames from './WeddingNames';
+import PropTypes from 'prop-types';
 
 const WeddingNamesContainer = ({ setNames, error }) => {
 
@@ -23,6 +24,11 @@ const WeddingNamesContainer = ({ setNames, error }) => {
     }
 
     return <WeddingNames {...nextProps} />
+}
+
+WeddingNamesContainer.propTypes = {
+    setNames: PropTypes.func.isRequired,
+    error: PropTypes.bool.isRequired
 }
 
 export default WeddingNamesContainer;

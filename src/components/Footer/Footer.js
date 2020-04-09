@@ -3,6 +3,7 @@ import s from './footer.module.scss';
 import footerLogo from '../../assets/images/footer-logo.png';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const Footer = ({ links }) => {
     return (
@@ -35,5 +36,9 @@ const Footer = ({ links }) => {
 const mstp = state => ({
     links: state.links.data
 })
+
+Footer.propTypes = {
+    links: PropTypes.array.isRequired
+}
 
 export default connect(mstp)(Footer);

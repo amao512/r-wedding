@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './info.module.scss';
 import img from '../../../../assets/images/gallery-9.jpg';
+import PropTypes from 'prop-types';
 
 const Info = ({ category, date, city, capacity, inviting, desc}) => {
     return (
@@ -41,6 +42,15 @@ const Info = ({ category, date, city, capacity, inviting, desc}) => {
             </div>
         </div>
     )
+}
+
+Info.propTypes = {
+    category: PropTypes.string,
+    date: PropTypes.string,
+    city: PropTypes.string,
+    capacity: PropTypes.string,
+    inviting: PropTypes.string,
+    desc: PropTypes.string
 }
 
 export default Info;

@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './error.module.scss';
+import PropTypes from 'prop-types';
 
 const ErrorForm = ({ error, setError }) => {
     return (
@@ -11,6 +12,11 @@ const ErrorForm = ({ error, setError }) => {
             >highlight_off</span>
         </div>
     )
+}
+
+ErrorForm.propTypes = {
+    error: PropTypes.bool.isRequired,
+    setError: PropTypes.func.isRequired
 }
 
 export default ErrorForm;

@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './banner.module.scss';
+import PropTypes from 'prop-types';
 
 const Banner = ({ img, category, names, date }) => {
     return (
@@ -11,6 +12,13 @@ const Banner = ({ img, category, names, date }) => {
             </div>
         </div>
     )
+}
+
+Banner.propTypes = {
+    img: PropTypes.string,
+    category: PropTypes.string,
+    names: PropTypes.string,
+    date: PropTypes.string
 }
 
 export default Banner;

@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './couple.module.scss';
 import img from '../../../../assets/images/profile/bride.jpg';
+import PropTypes from 'prop-types';
 
 const Couple = ({ groom, bride }) => {
     return (
@@ -26,6 +27,17 @@ const Couple = ({ groom, bride }) => {
             </div>
         </div>
     )
+}
+
+Couple.propTypes = {
+    groom: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        lastName: PropTypes.string.isRequired
+    }),
+    bride: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        lastName: PropTypes.string.isRequired
+    }),
 }
 
 export default Couple;

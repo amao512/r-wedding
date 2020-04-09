@@ -32,7 +32,13 @@ const mstp = state => ({
 })
 
 ProvePage.propTypes = {
-    wedding: PropTypes.object.isRequired
+    wedding: PropTypes.shape({
+        names: PropTypes.object.isRequired,
+        date: PropTypes.string.isRequired,
+        city: PropTypes.string.isRequired,
+        capacity: PropTypes.string.isRequired,
+        restaurant: PropTypes.object
+    })
 }
 
 export default connect(mstp)(ProvePageContainer);

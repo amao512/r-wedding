@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import Loading from './components/Loading/Loading';
 import { connect } from 'react-redux';
 import { getPlans } from './redux/plansReducer';
+import { getCities } from './redux/cityReducer';
 
 const Home = lazy(() => import('./pages/Home'));
 const Create = lazy(() => import('./pages/Create'));
@@ -16,11 +17,12 @@ const Restaurants = lazy(() => import('./pages/Restaurants'));
 const SingleRestaurant = lazy(() => import('./pages/SingleRestaurant'));
 const PageNotFound = lazy(() => import('./pages/PageNotFound'));
 
-const App = ({ getPlans }) => {
+const App = ({ getPlans, getCities }) => {
 
   useEffect(() => {
-      getPlans()
-  }, [getPlans])
+      getPlans();
+      getCities();
+  }, [getPlans, getCities])
 
   return (
     <div className="App">
@@ -46,4 +48,4 @@ const App = ({ getPlans }) => {
   );
 }
 
-export default connect(null, { getPlans })(App);
+export default connect(null, { getPlans, getCities })(App);

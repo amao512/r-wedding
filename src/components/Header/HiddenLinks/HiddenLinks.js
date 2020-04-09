@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './hiddenLinks.module.scss';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const HiddenLinks = ({ links, showLinks, setShowLinks }) => {
     return (
@@ -14,6 +15,12 @@ const HiddenLinks = ({ links, showLinks, setShowLinks }) => {
                 </ul>
             </div>
     )
+}
+
+HiddenLinks.propTypes = {
+    links: PropTypes.array.isRequired,
+    showLinks: PropTypes.bool.isRequired,
+    setShowLinks: PropTypes.func.isRequired
 }
 
 export default HiddenLinks;

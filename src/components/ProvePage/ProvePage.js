@@ -1,6 +1,7 @@
 import React from 'react';
 import img from '../../assets/images/organizations/Image-05.jpg'
 import Prove from './common/Prove';
+import PropTypes from 'prop-types';
 
 const ProvePage = ({ wedding, plans }) => {
 
@@ -36,6 +37,17 @@ const ProvePage = ({ wedding, plans }) => {
             </Prove>
         </>
     )
+}
+
+ProvePage.propTypes = {
+    wedding: PropTypes.shape({
+        names: PropTypes.object.isRequired,
+        date: PropTypes.string.isRequired,
+        city: PropTypes.string.isRequired,
+        capacity: PropTypes.string.isRequired,
+        restaurant: PropTypes.string
+    }),
+    plans: PropTypes.array.isRequired
 }
 
 export default ProvePage;

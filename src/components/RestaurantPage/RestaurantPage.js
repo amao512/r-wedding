@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import s from './restaurant.module.scss';
+import PropTypes from 'prop-types';
 
 const RestaurantPage = ({ slug, restaurants }) => {
 
@@ -22,5 +23,10 @@ const RestaurantPage = ({ slug, restaurants }) => {
 const mstp = state => ({
     restaurants: state.restaurants.data
 })
+
+RestaurantPage.propTypes = {
+    slug: PropTypes.string.isRequired,
+    restaurants: PropTypes.array.isRequired
+}
 
 export default connect(mstp)(RestaurantPage);

@@ -1,46 +1,29 @@
+import { API } from "../api/api";
+
+const SET_CITIES = 'SET_CITIES';
 
 const initialState = {
-    data: [
-        {name: 'Nur-Sultan'},
-        {name: 'Aqtau'},
-        {name: 'Aqtobe'},
-        {name: 'Almaty'},
-        {name: 'Arkalyk'},
-        {name: 'Atyrau'},
-        {name: 'Baikonur'},
-        {name: 'Balqash'},
-        {name: 'Zhezqazgan'},
-        {name: 'Qaragandy'},
-        {name: 'Kentau'},
-        {name: 'Qyzylorda'},
-        {name: 'Kokshetau'},
-        {name: 'Kostanay'},
-        {name: 'Zhanaozen'},
-        {name: 'Pavlodar'},
-        {name: 'Petropavl'},
-        {name: 'Ridder'},
-        {name: 'Saran'},
-        {name: 'Satpayev'},
-        {name: 'Semey'},
-        {name: 'Stepnogorsk'},
-        {name: 'Taldyqorgan'},
-        {name: 'Taraz'},
-        {name: 'Temirtau'},
-        {name: 'Turkistan'},
-        {name: 'Oral'},
-        {name: 'Oskemen'},
-        {name: 'Shymkent'},
-        {name: 'Shakhtinsk'},
-        {name: 'Schuchinsk'},
-        {name: 'Ekibastuz'},
-    ]
+    data: []
 }
 
 const cityReducer = (state = initialState, action) => {
     switch(action.type){
+        case SET_CITIES:
+            return {
+                ...state,
+                data: action.cities
+            }
         default:
             return state;
     }
+}
+
+export const setCities = cities => ({ type: SET_CITIES, cities });
+
+export const getCities = () => async dispatch => {
+    await API.getCities().then(response => {
+        dispatch(setCities(response.items));
+    })
 }
 
 export default cityReducer;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Input from '../Input/Input';
+import PropTypes from 'prop-types';
 
 const Invite = ({ setInvite, error }) => {
 
@@ -17,6 +18,11 @@ const Invite = ({ setInvite, error }) => {
             />
         </div>
     )
+}
+
+Invite.propTypes = {
+    setInvite: PropTypes.func.isRequired,
+    error: PropTypes.bool.isRequired
 }
 
 export default Invite;

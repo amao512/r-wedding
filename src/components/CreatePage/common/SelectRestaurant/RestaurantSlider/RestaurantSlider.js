@@ -3,6 +3,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import s from './slider.module.scss';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const RestaurantSlider = ({ show, restaurants, setRestaurant, setTitle }) => {
     return (
@@ -59,6 +60,13 @@ const RestaurantSlider = ({ show, restaurants, setRestaurant, setTitle }) => {
             }
         </>
     )
+}
+
+RestaurantSlider.propTypes = {
+    show: PropTypes.bool.isRequired,
+    restaurants: PropTypes.array.isRequired,
+    setRestaurant: PropTypes.func.isRequired,
+    setTitle: PropTypes.func.isRequired
 }
 
 export default RestaurantSlider;

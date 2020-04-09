@@ -2,6 +2,7 @@ import React from 'react';
 import InputForm from '../../../StyledComponents/InputForm';
 import s from './restaurant.module.scss';
 import RestaurantSlider from './RestaurantSlider/RestaurantSlider';
+import PropTypes from 'prop-types';
 
 const SelectRestaurant = props => {
 
@@ -37,6 +38,16 @@ const SelectRestaurant = props => {
             /> 
         </div>
     )
+}
+
+SelectRestaurant.propTypes = {
+    show: PropTypes.bool.isRequired,
+    setShow: PropTypes.func.isRequired,
+    title: PropTypes.string,
+    setTitle: PropTypes.func.isRequired,
+    changeTitle: PropTypes.func.isRequired,
+    restaurants: PropTypes.array.isRequired,
+    setRestaurant: PropTypes.func.isRequired
 }
 
 export default SelectRestaurant;

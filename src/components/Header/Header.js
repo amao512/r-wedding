@@ -5,6 +5,7 @@ import Logo from './Logo/Logo';
 import Links from './Links/Links';
 import HiddenLinks from './HiddenLinks/HiddenLinks';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const Header = ({ links }) => {
     const [showLinks, setShowLinks] = useState(false);
@@ -32,5 +33,9 @@ const Header = ({ links }) => {
 const mstp = state => ({
     links: state.links.data
 })
+
+Header.propTypes = {
+    links: PropTypes.array.isRequired
+}
 
 export default connect(mstp)(Header);

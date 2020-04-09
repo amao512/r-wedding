@@ -1,5 +1,6 @@
 import React from 'react';
 import InputForm from '../../../StyledComponents/InputForm';
+import PropTypes from 'prop-types';
 
 const SelectDate = ({ selectDate, error }) => {
     return (
@@ -17,6 +18,11 @@ const SelectDate = ({ selectDate, error }) => {
             </div>
         </>
     )
+}
+
+SelectDate.propTypes = {
+    selectDate: PropTypes.func.isRequired,
+    error: PropTypes.bool.isRequired
 }
 
 export default SelectDate;

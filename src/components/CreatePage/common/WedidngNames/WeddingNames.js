@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '../Input/Input';
+import PropTypes from 'prop-types';
 
 const WeddingNames = props  => {
 
@@ -32,6 +33,14 @@ const WeddingNames = props  => {
             </div>
         </>
     )
+}
+
+WeddingNames.propTypes = {
+    error: PropTypes.bool.isRequired,
+    setGroomLastName: PropTypes.func.isRequired,
+    setGroomName: PropTypes.func.isRequired,
+    setBrideName: PropTypes.func.isRequired,
+    setBrideLastName: PropTypes.func.isRequired
 }
 
 export default WeddingNames;

@@ -1,6 +1,7 @@
 import React from 'react';
 import InputForm from '../../../StyledComponents/InputForm';
 import s from './city.module.scss';
+import PropTypes from 'prop-types';
 
 const SelectCity = props => {
 
@@ -36,12 +37,23 @@ const SelectCity = props => {
                 {cities.map((city, index) => (
                     <p key={index}
                        className={s.option}
-                       onClick={() => changeCity(city.name)}
-                    >{city.name}</p>
+                       onClick={() => changeCity(city.fields.name)}
+                    >{city.fields.name}</p>
                 ))}
             </div>
         </div>
     )
+}
+
+SelectCity.propTypes = {
+    changeCity: PropTypes.func.isRequired,
+    select: PropTypes.bool.isRequired,
+    cities: PropTypes.array.isRequired,
+    error: PropTypes.bool.isRequired,
+    selectCity: PropTypes.func.isRequired,
+    setSelect: PropTypes.func.isRequired,
+    city: PropTypes.string.isRequired,
+    setCity: PropTypes.func.isRequired
 }
 
 export default SelectCity;
