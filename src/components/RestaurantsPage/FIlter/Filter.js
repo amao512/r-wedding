@@ -33,8 +33,8 @@ const Filter = ({ cities, filterRestaurants, setFilter }) => {
                         <div className={s.cities}>
                             {cities.map((city, index) => (
                                 <p key={index} className={selectedCity === city.name ? s.selectedCity : ''}
-                                    onClick={() => setSelectedCity(city.name)}
-                                >{city.name}</p>
+                                    onClick={() => setSelectedCity(city.fields.name)}
+                                >{city.fields.name}</p>
                             ))}
                         </div>
 
