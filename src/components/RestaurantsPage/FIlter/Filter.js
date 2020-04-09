@@ -32,7 +32,7 @@ const Filter = ({ cities, filterRestaurants, setFilter }) => {
                         <h3>City: {selectedCity}</h3>
                         <div className={s.cities}>
                             {cities.map((city, index) => (
-                                <p key={index} className={selectedCity === city.name ? s.selectedCity : ''}
+                                <p key={index} className={selectedCity === city.fields.name ? s.selectedCity : ''}
                                     onClick={() => setSelectedCity(city.fields.name)}
                                 >{city.fields.name}</p>
                             ))}
