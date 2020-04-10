@@ -7,6 +7,7 @@ import Loading from './components/Loading/Loading';
 import { connect } from 'react-redux';
 import { getPlans } from './redux/plansReducer';
 import { getCities } from './redux/cityReducer';
+import { getRestaurants } from './redux/restaurantsReducer';
 
 const Home = lazy(() => import('./pages/Home'));
 const Create = lazy(() => import('./pages/Create'));
@@ -17,12 +18,13 @@ const Restaurants = lazy(() => import('./pages/Restaurants'));
 const SingleRestaurant = lazy(() => import('./pages/SingleRestaurant'));
 const PageNotFound = lazy(() => import('./pages/PageNotFound'));
 
-const App = ({ getPlans, getCities }) => {
+const App = ({ getPlans, getCities, getRestaurants }) => {
 
   useEffect(() => {
       getPlans();
       getCities();
-  }, [getPlans, getCities])
+      getRestaurants();
+  }, [getPlans, getCities, getRestaurants])
 
   return (
     <div className="App">
@@ -48,4 +50,4 @@ const App = ({ getPlans, getCities }) => {
   );
 }
 
-export default connect(null, { getPlans, getCities })(App);
+export default connect(null, { getPlans, getCities, getRestaurants })(App);
