@@ -24,22 +24,22 @@ const RestaurantSlider = ({ show, restaurants, setRestaurant, setTitle }) => {
                                 <h1>There is no restaurants</h1>
                             </div>
                             :   <Slider className={s.slider}>
-                                    {restaurants.map((item, index) => (
-                                        <Slide key={index} index={index} 
+                                    {restaurants.map(res => (
+                                        <Slide key={res.sys.id} index={res.sys.id} 
                                                 className={s.slide} 
-                                                style={{'backgroundImage': `url(${item.img})`}}
+                                                style={{'backgroundImage': `url(${res.fields.img.fields.file.url})`}}
                                         >
                                             <div className={s.titleBtn}>
-                                                <h1>{item.title}</h1>
+                                                <h1>{res.fields.title}</h1>
 
                                                 <div className={s.buttons}>
-                                                    <NavLink to={`/restaurants/${item.slug}`} className={s.more}>
+                                                    <NavLink to={`/restaurants/${res.fields.slug}`} className={s.more}>
                                                         <button>More</button>
                                                     </NavLink>
                                                     <button className={s.select} 
                                                             onClick={() => {
-                                                                setRestaurant(item);
-                                                                setTitle(item.title);
+                                                                setRestaurant(res);
+                                                                setTitle(res.fields.title);
                                                             }}
                                                     >Select</button>
                                                 </div>

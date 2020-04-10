@@ -5,20 +5,22 @@ import PropTypes from 'prop-types';
 
 const Restaurant = ({ restaurant }) => {
 
-    if(restaurant.img === undefined || restaurant.title === undefined){
+    const {title, slug, img} = restaurant.fields;
+    
+    if(img.fields.file.url === undefined || title === undefined){
         return (
             <div className={s.restaurant}>
-                <h1>{restaurant.title}</h1>
+                <h1>{title}</h1>
             </div>
         )
     }
 
     return (
         <div className={s.restaurant}>
-            <h1>{restaurant.title}</h1>
+            <h1>{title}</h1>
             <div className={s.img}>
-                <img src={restaurant.img} alt='restaurant' />
-                <NavLink to={`/restaurants/${restaurant.slug}`}>
+                <img src={img.fields.file.url} alt={title} />
+                <NavLink to={`/restaurants/${slug}`}>
                     <button>More</button>
                 </NavLink>
             </div>
