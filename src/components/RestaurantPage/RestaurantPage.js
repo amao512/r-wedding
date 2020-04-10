@@ -5,15 +5,17 @@ import PropTypes from 'prop-types';
 
 const RestaurantPage = ({ slug, restaurants }) => {
 
-    const restaurant = restaurants.find(r => r.slug === slug)
+    const restaurant = restaurants.find(r => r.fields.slug === slug)
+    const {fields: {title, img: {fields: { file } } } } = restaurant;
 
     return (
         <div className='container' >
             <div className={s.restaurant}>
-                <h1>{restaurant.title}</h1>
+                <h1>{title}</h1>
                 
                 <div className={s.images}>
-                    <img src={restaurant.img} alt={restaurant.title} />
+                    <img src={file.url} 
+                        alt={title} />
                 </div>
             </div>
         </div>
