@@ -4,5 +4,5 @@ export const getSelectedCategory = data => {
 }
 
 export const getLastRestaurants = data => {
-    return [data[0], data[1], data[2], data[3]];
+    return data.slice(0, 4);
 }
