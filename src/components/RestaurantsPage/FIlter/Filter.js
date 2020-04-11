@@ -5,7 +5,7 @@ import InputForm from '../../StyledComponents/InputForm';
 import { filterRestaurants } from '../../../redux/restaurantsReducer';
 import PropTypes from 'prop-types';
 
-const Filter = ({ cities, filterRestaurants, setFilter }) => {
+const Filter = ({ cities, filterRestaurants }) => {
 
     const [filterCondition, setFilterCondition] = useState(false);
     const [selectedCity, setSelectedCity] = useState('');
@@ -13,7 +13,6 @@ const Filter = ({ cities, filterRestaurants, setFilter }) => {
     
     const applyFilter = () => {
         filterRestaurants(selectedCity, capacity);
-        setFilter(true);
         setFilterCondition(false);
     }
 
@@ -69,7 +68,6 @@ const mstp = state => ({
 Filter.propTypes = {
     cities: PropTypes.array.isRequired,
     filterRestaurants: PropTypes.func.isRequired,
-    setFilter: PropTypes.func.isRequired
 }
 
 export default connect(mstp, { filterRestaurants })(Filter);
