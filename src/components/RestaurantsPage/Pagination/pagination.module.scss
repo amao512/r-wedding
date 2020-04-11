@@ -1,0 +1,28 @@
+.pagination {
+    text-align: center;
+    ul {
+        list-style: none;
+        padding: 0;
+        display: inline-flex;
+        li {
+            margin: 0 3px;
+            .count,
+            .activeCount {
+                padding: 5px 10px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: all .2s ease;
+            }
+            .count {
+                &:hover {
+                    background-color: #222;
+                    color: #fff;
+                }
+            }
+            .activeCount {
+                background-color: #222;
+                color: #fff;
+            }
+        }
+    }
+}
