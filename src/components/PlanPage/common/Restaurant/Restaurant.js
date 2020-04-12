@@ -4,23 +4,21 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Restaurant = ({ restaurant }) => {
-
-    const {title, slug, img} = restaurant.fields;
     
-    if(img.fields.file.url === undefined || title === undefined){
+    if(restaurant.fields === undefined){
         return (
             <div className={s.restaurant}>
-                <h1>{title}</h1>
+                <h1>Restaurant: None</h1>
             </div>
         )
     }
 
     return (
         <div className={s.restaurant}>
-            <h1>{title}</h1>
+            <h1>{restaurant.fields.title}</h1>
             <div className={s.img}>
-                <img src={img.fields.file.url} alt={title} />
-                <NavLink to={`/restaurants/${slug}`}>
+                <img src={restaurant.fields.img.fields.file.url} alt='restaurant' />
+                <NavLink to={`/restaurants/${restaurant.fields.slug}`}>
                     <button>More</button>
                 </NavLink>
             </div>

@@ -25,7 +25,7 @@ const Info = ({ category, date, city, capacity, inviting, desc}) => {
 
                         <div className={s.date}>
                             <span className="material-icons">event_note</span>
-                            <p>{date}</p>
+                            <p>{new Date(date).toDateString()}</p>
                         </div>
 
                         <div className={s.time}>

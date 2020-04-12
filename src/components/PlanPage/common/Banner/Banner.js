@@ -8,7 +8,7 @@ const Banner = ({ img, category, names, date }) => {
             <div className={s.title}>
                 <p>{category} of</p>
                 <h1>{names}</h1>
-                <p>{date}</p>
+                <p>{new Date(date).toDateString()}</p>
             </div>
         </div>
     )

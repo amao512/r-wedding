@@ -25,7 +25,7 @@ const ProvePage = ({ wedding, plans }) => {
                         <h3>City:</h3><p>{city}</p>
                     </div>
                     <div>
-                        <h3>Date:</h3><p>{date}</p>
+                        <h3>Date:</h3><p>{new Date(date).toDateString()}</p>
                     </div>
                     <div>
                         <h3>Capacity:</h3><p>{capacity}</p>
