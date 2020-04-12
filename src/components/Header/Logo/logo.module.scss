@@ -1,0 +1,49 @@
+.logo {
+    animation: back-loaded 2s linear;
+    img {
+        animation: logo-loaded 2s linear; 
+    }
+}
+
+@keyframes logo-loaded {
+    0% {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 400px;
+        z-index: 99;
+    }
+    100% {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 400px;
+        z-index: 99;
+    }
+}
+
+@keyframes back-loaded {
+    0% {
+        position: fixed;
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 9;
+
+    }
+    100% {
+        position: fixed;
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 9;
+    }
+}
